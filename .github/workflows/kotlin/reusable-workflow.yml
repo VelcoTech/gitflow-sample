@@ -1,0 +1,11 @@
+name: Reusable workflow
+on:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  echo:
+    name: 🔢 Get versions
+    steps:
+      - name: 🔢 Get current version
+        run: echo "toto"
