@@ -1,0 +1,21 @@
+name: ⭐ Create release
+on:
+  push:
+jobs:
+  create-release-candidate:
+    name: 📦️ Create release candidate
+    steps:
+      - name: ℹ️ Print
+        run: echo "::notice::📦️ Release candidate created"
+  deploy-release-candidate:
+    name: 🚀️ Deploy release candidate
+    steps:
+      - name: ℹ️ Print
+        run: echo "::notice::🚀️ Release candidate deployed"
+  promote-release:
+    name: 📦️ Promote release
+    environment:
+      - validate
+    steps:
+      - name: ℹ️ Print
+        run: echo "::notice::📦️️ Release promoted"
