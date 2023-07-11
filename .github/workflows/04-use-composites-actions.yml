@@ -1,0 +1,10 @@
+name: ⭐ Create release
+on:
+  push:
+jobs:
+  goodbye:
+    name: Goodbye
+    runs-on: ubuntu-22.04
+    uses: .github/actions/goodbye@developcd gitf  
+    with:
+      who-to-greet: 'Mona the Octocat'

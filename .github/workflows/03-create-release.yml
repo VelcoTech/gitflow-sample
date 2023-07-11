@@ -1,9 +1,16 @@
-name: ⭐ Release
+name: ⭐ Create release
 on:
-  workflow_run:
-    workflows: [▶️ Integrate]
-    types:
-      - completed
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version
+        required: true
+        default: patch
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
 jobs:
   create-release-candidate:
     name: 📦️ Create release candidate
