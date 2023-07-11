@@ -5,6 +5,6 @@ jobs:
   goodbye:
     name: Goodbye
     runs-on: ubuntu-22.04
-    uses: .github/actions/goodbye
+    uses: ./.github/actions/goodbye
     with:
       who-to-greet: 'Mona the Octocat'
