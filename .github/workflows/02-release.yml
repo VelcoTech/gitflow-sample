@@ -1,7 +1,7 @@
-name: ⭐ Create release
+name: ⭐ Release
 on:
   workflow_run:
-    workflows: ["▶️ Integrate"]
+    workflows: [01-integrate]
     types:
       - completed
 jobs:
