@@ -1,12 +1,12 @@
-name: 🤝 Merge feature
+#name: 🤝 Merge feature
 #on:
 #  push:
 #    branch:
 #      - develop
-jobs:
-  integrate-kotlin:
-    name: ▶️ Integrate kotlin
-    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/master
-  deploy-kotlin:
-    name: 🚀 Deploy kotlin
-    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
+#jobs:
+#  integrate-kotlin:
+#    name: ▶️ Integrate kotlin
+#    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/master
+#  deploy-kotlin:
+#    name: 🚀 Deploy kotlin
+#    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master

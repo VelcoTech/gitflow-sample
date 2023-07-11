@@ -1,4 +1,4 @@
-name: ⭐ Create release
+#name: ⭐ Create release
 #on:
 #  workflow_dispatch:
 #    inputs:
@@ -11,36 +11,36 @@ name: ⭐ Create release
 #          - major
 #          - minor
 #          - patch
-jobs:
-  integrate-kotlin:
-    name: ▶️ Integrate kotlin
-    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/master
-  compute-new-version:
-    name: ❓ Compute new version
-    uses: VelcoTech/github-workflows/.github/workflows/compute-new-version-kotlin.yml@feature/master
-    with:
-      version: {{ github.event.inputs.version }}
-  create-release-candidate:
-    name: 📦️ Create release candidate
-    needs: [integrate-kotlin]
-    uses: VelcoTech/github-workflows/.github/workflows/create-release-candidate.yml@feature/master
-  deploy-release-candidate:
-    name: 🚀️ Deploy release candidate
-    needs: [create-release-candidate]
-    environment: recette
-    uses: VelcoTech/github-workflows/.github/workflows/deploy-release-candidate.yml@feature/master
-  promote-release:
-    name: 📦️ Promote release
-    needs: [deploy-release-candidate]
-    environment: validate
-    uses: VelcoTech/github-workflows/.github/workflows/promote-release.yml@feature/master
-  deploy-demo:
-    name: 🚀️ Deploy demo
-    needs: [promote-release]
-    environment: demo
-    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
-  deploy-prod:
-    name: 🚀️ Deploy prod
-    needs: [promote-release]
-    environment: prod
-    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
+#jobs:
+#  integrate-kotlin:
+#    name: ▶️ Integrate kotlin
+#    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/master
+#  compute-new-version:
+#    name: ❓ Compute new version
+#    uses: VelcoTech/github-workflows/.github/workflows/compute-new-version-kotlin.yml@feature/master
+#    with:
+#      version: {{ github.event.inputs.version }}
+#  create-release-candidate:
+#    name: 📦️ Create release candidate
+#    needs: [integrate-kotlin]
+#    uses: VelcoTech/github-workflows/.github/workflows/create-release-candidate.yml@feature/master
+#  deploy-release-candidate:
+#    name: 🚀️ Deploy release candidate
+#    needs: [create-release-candidate]
+#    environment: recette
+#    uses: VelcoTech/github-workflows/.github/workflows/deploy-release-candidate.yml@feature/master
+#  promote-release:
+#    name: 📦️ Promote release
+#    needs: [deploy-release-candidate]
+#    environment: validate
+#    uses: VelcoTech/github-workflows/.github/workflows/promote-release.yml@feature/master
+#  deploy-demo:
+#    name: 🚀️ Deploy demo
+#    needs: [promote-release]
+#    environment: demo
+#    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
+#  deploy-prod:
+#    name: 🚀️ Deploy prod
+#    needs: [promote-release]
+#    environment: prod
+#    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
