@@ -4,16 +4,21 @@ on:
 jobs:
   create-release-candidate:
     name: 📦️ Create release candidate
+    runs-on: ubuntu-22.04
     steps:
       - name: ℹ️ Print
         run: echo "::notice::📦️ Release candidate created"
   deploy-release-candidate:
     name: 🚀️ Deploy release candidate
+    runs-on: ubuntu-22.04
+    needs: [create-release-candidate]
     steps:
       - name: ℹ️ Print
         run: echo "::notice::🚀️ Release candidate deployed"
   promote-release:
     name: 📦️ Promote release
+    runs-on: ubuntu-22.04
+    needs: [deploy-release-candidate]
     environment: validate
     steps:
       - name: ℹ️ Print
