@@ -14,8 +14,7 @@ jobs:
         run: echo "::notice::🚀️ Release candidate deployed"
   promote-release:
     name: 📦️ Promote release
-    environment:
-      - validate
+    environment: validate
     steps:
       - name: ℹ️ Print
         run: echo "::notice::📦️️ Release promoted"
