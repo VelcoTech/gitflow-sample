@@ -1,0 +1,10 @@
+name: ▶️ Integrate
+on:
+  push:
+jobs:
+  integrate-kotlin:
+    name: ▶️ Integrate kotlin
+    runs-on: ubuntu-22.04
+    steps:
+      - name: ℹ️ Print
+        run: echo "::notice::▶️ Integrate kotlin"

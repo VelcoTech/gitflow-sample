@@ -1,6 +1,9 @@
 name: ⭐ Create release
 on:
-  push:
+  workflow_run:
+    workflows: ["▶️ Integrate"]
+    types:
+      - completed
 jobs:
   create-release-candidate:
     name: 📦️ Create release candidate
