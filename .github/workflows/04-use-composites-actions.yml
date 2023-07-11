@@ -1,10 +1,10 @@
-name: ⭐ Create release
+name: ⭐ Use composites actions
 on:
   push:
 jobs:
   goodbye:
     name: Goodbye
     runs-on: ubuntu-22.04
-    uses: .github/actions/goodbye@developcd gitf  
+    uses: .github/actions/goodbye@develop
     with:
       who-to-greet: 'Mona the Octocat'
