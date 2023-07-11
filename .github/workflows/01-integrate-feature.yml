@@ -4,11 +4,6 @@ on:
 jobs:
   integrate-kotlin:
     name: ▶️ Integrate kotlin
-    runs-on: ubuntu-22.04
-    steps:
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
+    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/daws-27 # TODO UPDATE GIT REF
+    with:
+      java-version: '17'
