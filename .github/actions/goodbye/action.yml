@@ -23,5 +23,5 @@ runs:
       shell: bash
     - run: pwd
       shell: bash
-    - run: goodbye.sh
+    - run: ./.github/actions/goodbye/goodbye.sh
       shell: bash
