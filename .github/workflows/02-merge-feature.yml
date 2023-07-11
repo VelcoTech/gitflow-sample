@@ -1,14 +1,12 @@
-name: ▶️ Merge feature
-on:
-  push:
+name: 🤝 Merge feature
+#on:
+#  push:
+#    branch:
+#      - develop
 jobs:
   integrate-kotlin:
     name: ▶️ Integrate kotlin
-    runs-on: ubuntu-22.04
-    steps:
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
-      - name: ℹ️ Print
-        run: echo "::notice::▶️ Integrate kotlin"
+    uses: VelcoTech/github-workflows/.github/workflows/integrate-kotlin.yml@feature/master
+  deploy-kotlin:
+    name: 🚀 Deploy kotlin
+    uses: VelcoTech/github-workflows/.github/workflows/deploy-kotlin.yml@feature/master
