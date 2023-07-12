@@ -24,7 +24,7 @@
         <server>
             <id>velco-framework-back</id>
             <username>github</username>
-            <password>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</password>
+            <password>${env.GITHUB_TOKEN}</password>
         </server>
     </servers>
 </settings>
