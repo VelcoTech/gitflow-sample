@@ -23,8 +23,8 @@
     <servers>
         <server>
             <id>velco-framework-back</id>
-            <username>fabien-renaud-velco</username>
-            <password>${secrets.GITHUB_TOKEN}</password>
+            <username>github</username>
+            <password>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</password>
         </server>
     </servers>
 </settings>
