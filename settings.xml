@@ -23,8 +23,8 @@
     <servers>
         <server>
             <id>velco-tech</id>
-            <username>github</username>
-            <password>${env.GITHUB_TOKEN}</password>
+            <username>fabien-renaud-velco</username>
+            <password>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</password>
         </server>
     </servers>
 </settings>
