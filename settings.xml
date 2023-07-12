@@ -10,7 +10,7 @@
             <id>velco-tech</id>
             <repositories>
                 <repository>
-                    <id>velco-tech-framework-back</id>
+                    <id>velco-framework-back</id>
                     <url>https://maven.pkg.github.com/VelcoTech/velco-framework-back</url>
                 </repository>
                 <repository>
@@ -22,9 +22,9 @@
     </profiles>
     <servers>
         <server>
-            <id>velco-tech</id>
+            <id>velco-framework-back</id>
             <username>fabien-renaud-velco</username>
-            <password>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</password>
+            <password>${secrets.GITHUB_TOKEN}</password>
         </server>
     </servers>
 </settings>
