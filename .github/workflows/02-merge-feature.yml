@@ -1,8 +1,6 @@
 name: 🤝 Merge feature
 on:
   push:
-#    branch:
-#      - develop
 jobs:
 #  integrate-kotlin:
 #    name: ▶️ Integrate kotlin
