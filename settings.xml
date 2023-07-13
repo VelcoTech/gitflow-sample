@@ -10,8 +10,8 @@
             <id>velco-tech</id>
             <repositories>
                 <repository>
-                    <id>velco-framework-back</id>
-                    <url>https://maven.pkg.github.com/VelcoTech/velco-framework-back</url>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/VelcoTech/*</url>
                 </repository>
                 <repository>
                     <id>google</id>
@@ -22,7 +22,7 @@
     </profiles>
     <servers>
         <server>
-            <id>velco-framework-back</id>
+            <id>github</id>
             <username>${env.USERNAME}</username>
             <password>${env.GITHUB_TOKEN}</password>
         </server>
