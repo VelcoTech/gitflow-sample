@@ -13,5 +13,7 @@ jobs:
       type: 'package'
     secrets:
       WIREGUARD_CONFIGURATION: ${{ secrets.WIREGUARD_CONFIGURATION }}
+      HOST: ${{ secrets.ON_PREMISE_TEST_HOST }}
+      PORT: ${{ secrets.ON_PREMISE_TEST_PORT }}
       PEM: ${{ secrets.ON_PREMISE_TEST_PEM }}
       PASSPHRASE: ${{ secrets.ON_PREMISE_TEST_PASSPHRASE }}
