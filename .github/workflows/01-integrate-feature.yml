@@ -1,6 +1,8 @@
 name: ▶️ Integrate feature
 on:
   push:
+    branches:
+      - master
 jobs:
   integrate-kotlin:
     name: ▶️ Integrate kotlin
