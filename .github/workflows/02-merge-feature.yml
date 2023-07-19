@@ -28,3 +28,4 @@ jobs:
       PEM: ${{ secrets.ON_PREMISE_TEST_PEM }}
       PASSPHRASE: ${{ secrets.ON_PREMISE_TEST_PASSPHRASE }}
       ASSETS_ACCESS_TOKEN: ${{ secrets.ASSETS_ACCESS_TOKEN }}
+
