@@ -1,0 +1,26 @@
+name: ⭐ Create release
+on:
+  push:
+permissions:
+  contents: write
+jobs:
+  get-versions:
+    name: 🔢 Get versions
+    steps:
+      - name: 🔢 Get git short sha
+        run: echo "short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+  create-release:
+    runs-on: ubuntu-22.04
+    needs: [get-versions]
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo '{"version":"1.0.1"}' > package.json
+      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: v${{ jobs.get-versions.outputs.short }}
+          tag: ${{ jobs.get-versions.outputs.short }}
+          artifactErrorsFailBuild: true
+          artifactContentType: application/zip
+          skipIfReleaseExists: true

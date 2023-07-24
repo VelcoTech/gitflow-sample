@@ -1,7 +1,0 @@
-name: ⭐ Use nested reusable workflows
-on:
-  push:
-jobs:
-  print:
-    name: ▶️ Integrate kotlin
-    uses: ./.github/workflows/kotlin/reusable-workflow.yml
