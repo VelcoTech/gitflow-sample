@@ -10,6 +10,7 @@ jobs:
     outputs:
       short: ${{ steps.get-short.outputs.short }}
     steps:
+      - uses: actions/checkout@v3
       - name: 🔢 Get git short sha
         id: get-short
         run: echo "short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
