@@ -7,8 +7,11 @@ jobs:
   get-versions:
     name: 🔢 Get versions
     runs-on: ubuntu-22.04
+    outputs:
+      short: ${{ steps.get-short.outputs.short }}
     steps:
       - name: 🔢 Get git short sha
+        id: get-short
         run: echo "short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
   create-release:
     runs-on: ubuntu-22.04
