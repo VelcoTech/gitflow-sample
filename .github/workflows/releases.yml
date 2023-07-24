@@ -20,8 +20,8 @@ jobs:
       - uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          name: v${{ jobs.get-versions.outputs.short }}
-          tag: ${{ jobs.get-versions.outputs.short }}
+          name: v${{ needs.get-versions.outputs.short }}
+          tag: ${{ needs.get-versions.outputs.short }}
           artifactErrorsFailBuild: true
           artifactContentType: application/zip
           skipIfReleaseExists: true
