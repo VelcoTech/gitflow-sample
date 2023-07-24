@@ -6,6 +6,7 @@ permissions:
 jobs:
   get-versions:
     name: 🔢 Get versions
+    runs-on: ubuntu-22.04
     steps:
       - name: 🔢 Get git short sha
         run: echo "short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
