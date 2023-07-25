@@ -23,6 +23,6 @@ jobs:
 #          skipIfReleaseExists: true
   callable:
     name: Callable
-    uses: VelcoTech/github-workflows/.github/workflows/build-kotlin.yml@develop
+    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin.yml@develop
   callable-reusable:
-    uses: VelcoTech/github-workflows/.github/workflows/build-kotlin-2.yml@develop
+    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin-2.yml@develop
