@@ -19,13 +19,16 @@ jobs:
     needs: [get-versions]
     steps:
       - uses: actions/checkout@v3
-      - run: echo '{"version":"1.0.3"}' > package.json
-      - uses: stefanzweifel/git-auto-commit-action@v4
-      - uses: ncipollo/release-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: v${{ needs.get-versions.outputs.short }}
-          tag: ${{ needs.get-versions.outputs.short }}
-          artifactErrorsFailBuild: true
-          artifactContentType: application/zip
-          skipIfReleaseExists: true
+      - id: get-version
+        uses: VelcoTech/gitflow-sample/.github/actions/get-version@develop
+      - run: echo ${{ steps.get-version.outputs.new-version }}
+#      - run: echo '{"version":"1.0.3"}' > package.json
+#      - uses: stefanzweifel/git-auto-commit-action@v4
+#      - uses: ncipollo/release-action@v1
+#        with:
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          name: v${{ needs.get-versions.outputs.short }}
+#          tag: ${{ needs.get-versions.outputs.short }}
+#          artifactErrorsFailBuild: true
+#          artifactContentType: application/zip
+#          skipIfReleaseExists: true

@@ -1,0 +1,16 @@
+name: 🌠 JSON to env
+description: 🌠 Take a JSON object as an input and set every entries as environment variable
+inputs:
+  json:
+    description: '(Required) JSON entries to set as environment variable'
+    required: true
+outputs:
+  version:
+    description: '(a)'
+    value: ${{ steps.get-version.outputs.version }}
+runs:
+  using: "composite"
+  steps:
+    - run: echo "version=1" >> $GITHUB_OUTPUT
+      id: get-version
+      shell: bash
