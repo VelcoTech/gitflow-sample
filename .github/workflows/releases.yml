@@ -26,9 +26,9 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: .github/workflows/build-kotlin.yml@develop
+      - uses: VelcoTech/github-workflows/.github/workflows/build-kotlin.yml@develop
   callable-reusable:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: .github/workflows/build-kotlin-2.yml@develop
+      - uses: VelcoTech/github-workflows/.github/workflows/build-kotlin-2.yml@develop
