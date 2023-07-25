@@ -4,6 +4,7 @@ on:
   workflow_call:
 jobs:
   reusable:
+    runs-on: ubuntu-22.04
     steps:
       - name: ⬇️ Checks-out code
         uses: actions/checkout@v3
