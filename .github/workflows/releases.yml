@@ -11,6 +11,7 @@ jobs:
       - id: get-version
         uses: VelcoTech/gitflow-sample/.github/actions/get-version@develop
       - run: echo ${{ steps.get-version.outputs.version }}
+      - uses: .github/workflows/build-kotlin.yml@develop
 #      - run: echo '{"version":"1.0.3"}' > package.json
 #      - uses: stefanzweifel/git-auto-commit-action@v4
 #      - uses: ncipollo/release-action@v1

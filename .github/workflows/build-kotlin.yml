@@ -1,0 +1,9 @@
+name: 📦 Build kotlin
+run-name: 📦️ Build kotlin - ${{ github.event.repository.name }} by @${{ github.actor }}
+on:
+  workflow_call:
+jobs:
+  build-kotlin:
+    steps:
+      - name: ⬇️ Checks-out code
+        uses: actions/checkout@v3
