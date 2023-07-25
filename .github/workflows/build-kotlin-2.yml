@@ -4,6 +4,7 @@ on:
   workflow_call:
 jobs:
   reusable:
+    name: Reusable
     steps:
       - name: ⬇️ Checks-out code
         uses: actions/checkout@v3
