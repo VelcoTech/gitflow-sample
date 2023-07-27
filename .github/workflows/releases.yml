@@ -5,12 +5,20 @@ permissions:
   contents: write
 jobs:
   create-release:
+    strategy:
+      matrix:
+        env: [ 'stage', 'prod' ]
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - id: get-version
-        uses: VelcoTech/gitflow-sample/.github/actions/get-version@develop
-      - run: echo ${{ steps.get-version.outputs.version }}
+      - run: echo 'toto'
+      - run: echo ${{ matrix.env }}
+      - run: echo 'tata'
+
+#      - uses: actions/checkout@v3
+#      - id: get-version
+#        uses: VelcoTech/gitflow-sample/.github/actions/get-version@develop
+#      - run: echo ${{ steps.get-version.outputs.version }}
+
 #      - run: echo '{"version":"1.0.3"}' > package.json
 #      - uses: stefanzweifel/git-auto-commit-action@v4
 #      - uses: ncipollo/release-action@v1
@@ -21,8 +29,8 @@ jobs:
 #          artifactErrorsFailBuild: true
 #          artifactContentType: application/zip
 #          skipIfReleaseExists: true
-  callable:
-    name: Callable
-    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin.yml@develop
-  callable-reusable:
-    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin-2.yml@develop
+#  callable:
+#    name: Callable
+#    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin.yml@develop
+#  callable-reusable:
+#    uses: VelcoTech/gitflow-sample/.github/workflows/build-kotlin-2.yml@develop
