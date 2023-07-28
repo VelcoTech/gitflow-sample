@@ -14,10 +14,10 @@ jobs:
       - run: echo ${{ matrix.env }}
       - run: echo 'tata'
       - run: |
-          echo ${{ github.github-ref }}
-          echo ${{ github.github-ref_name }}
-          echo ${{ github.github-ref_type }}
-          IFS='/' read -r REFS REF_TYPE REF_NAME <<< ${{ github.github-ref }}
+          echo ${{ github.ref }}
+          echo ${{ github.ref_name }}
+          echo ${{ github.ref_type }}
+          IFS='/' read -r REFS REF_TYPE REF_NAME <<< ${{ github.ref }}
           IFS='.-' read -r MAJOR MINOR PATCH PRERELEASE_TYPE PRERELEASE_VERSION <<< $REF_NAME
           echo $REFS
           echo $REF_TYPE
