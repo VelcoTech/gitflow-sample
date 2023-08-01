@@ -5,32 +5,16 @@ permissions:
   contents: read
   pull-requests: write
 jobs:
-  create-release:
-    runs-on: ubuntu-22.04
-    env:
-      GH_TOKEN: ${{ github.token }}
-    steps:
-      - uses: actions/checkout@v3
-      - run: echo ${{ env.GH_TOKEN }} | cut -c1-3
-      - run: echo ${{ env.GH_TOKEN }} | cut -c4-1000
-      - run: echo ${{ github.token }} | cut -c1-3
-      - run: echo ${{ github.token }} | cut -c4-1000
-      - run: echo ${{ secrets.GITHUB_TOKEN }} | cut -c1-3
-      - run: echo ${{ secrets.GITHUB_TOKEN }} | cut -c4-1000
-      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
-  aaa-release:
+  merge:
     runs-on: ubuntu-22.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
-      - run: echo ${{ env.GH_TOKEN }} | cut -c1-3
-      - run: echo ${{ env.GH_TOKEN }} | cut -c4-1000
-      - run: echo ${{ github.token }} | cut -c1-3
-      - run: echo ${{ github.token }} | cut -c4-1000
-      - run: echo ${{ secrets.GITHUB_TOKEN }} | cut -c1-3
-      - run: echo ${{ secrets.GITHUB_TOKEN }} | cut -c4-1000
-      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
+      - run: |
+          git remote
+          git fetch origin develop:master
+          git push origin master
+#      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
 #      - run: echo 'toto'
 #      - run: echo ${{ matrix.env }}
 #      - run: echo 'tata'
