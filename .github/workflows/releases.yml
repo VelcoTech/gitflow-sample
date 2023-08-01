@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          echo "git pull origin master"
-          git pull origin master
+          echo "git fetch origin master"
+          git fetch origin master
           echo "git fetch origin develop:master"
           git fetch origin develop:master
           echo "git push origin master"
