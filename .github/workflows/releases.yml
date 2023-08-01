@@ -10,14 +10,14 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
-      - run: gh pr create --base master --head develop --title "This is a test" --fill
+      - run: gh pr create --base master --head develop --title "This is a test" "This is a body test"
   aaa-release:
     runs-on: ubuntu-22.04
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - run: gh pr create --base master --head develop --title "This is a test" --fill
+      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
 #      - run: echo 'toto'
 #      - run: echo ${{ matrix.env }}
 #      - run: echo 'tata'
