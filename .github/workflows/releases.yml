@@ -10,18 +10,19 @@ jobs:
         env: [ 'stage', 'prod' ]
     runs-on: ubuntu-22.04
     steps:
-      - run: echo 'toto'
-      - run: echo ${{ matrix.env }}
-      - run: echo 'tata'
-      - run: |
-          echo ${{ github.ref }}
-          echo ${{ github.ref_name }}
-          echo ${{ github.ref_type }}
-          IFS='/' read -r REFS REF_TYPE REF_NAME <<< ${{ github.ref }}
-          IFS='.-' read -r MAJOR MINOR PATCH PRERELEASE_TYPE PRERELEASE_VERSION <<< $REF_NAME
-          echo $REFS
-          echo $REF_TYPE
-          echo $REF_NAME
+      - run: gh pr create --base master --head develop --title "This is a test"
+#      - run: echo 'toto'
+#      - run: echo ${{ matrix.env }}
+#      - run: echo 'tata'
+#      - run: |
+#          echo ${{ github.ref }}
+#          echo ${{ github.ref_name }}
+#          echo ${{ github.ref_type }}
+#          IFS='/' read -r REFS REF_TYPE REF_NAME <<< ${{ github.ref }}
+#          IFS='.-' read -r MAJOR MINOR PATCH PRERELEASE_TYPE PRERELEASE_VERSION <<< $REF_NAME
+#          echo $REFS
+#          echo $REF_TYPE
+#          echo $REF_NAME
 #          [[ $count -eq ${{ inputs.expected }} ]] || (echo "::error::Expected ${{ inputs.expected }} files, $count found." && exit 1)
 
 #      - uses: actions/checkout@v3
