@@ -5,10 +5,15 @@ permissions:
   contents: write
 jobs:
   create-release:
-    strategy:
-      matrix:
-        env: [ 'stage', 'prod' ]
     runs-on: ubuntu-22.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: gh pr create --base master --head develop --title "This is a test"
+  aaa-release:
+    runs-on: ubuntu-22.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - run: gh pr create --base master --head develop --title "This is a test"
 #      - run: echo 'toto'
