@@ -12,8 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
+          echo "git pull origin master"
           git pull origin master
+          echo "git fetch origin develop:master"
           git fetch origin develop:master
+          echo "git push origin master"
           git push origin master
 #      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
 #      - run: echo 'toto'
