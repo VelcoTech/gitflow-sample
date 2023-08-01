@@ -2,6 +2,7 @@ name: ⭐ Create release
 on:
   push:
 permissions:
+  content: read
   pull-requests: write
 jobs:
   create-release:
