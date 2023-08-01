@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          git fetch origin master
+          git pull origin master
           git fetch origin develop:master
           git push origin master
 #      - run: gh pr create --base master --head develop --title "This is a test" --body "This is a body test"
