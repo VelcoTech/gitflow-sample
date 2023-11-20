@@ -11,10 +11,10 @@ jobs:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - uses: VelcoTech/github-workflows/.github/actions/json-to-env@master
+      - uses: VelcoTech/gitflow-sample/.github/actions/json-to-env@master
         with:
           json: '{"a": "a"}'
-      - uses: VelcoTech/github-workflows/.github/actions/json-to-env@master
+      - uses: VelcoTech/gitflow-sample/.github/actions/json-to-env@master
         with:
           json: '{"b": "b"}'
       - run: printenv
